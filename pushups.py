@@ -1,11 +1,12 @@
 #!/usr/bin/python
 
 import argparse, math
-from datetime import date
+import datetime
 
 def getWeeks():
-    start = date(2015, 12, 7)
-    now = date.today()
+    start = datetime.date(2015, 12, 7)
+    # Adjusted for summer break
+    now = datetime.date.today() - datetime.timedelta(weeks = 7)
     return (now-start).days / 7
 
 def main():
